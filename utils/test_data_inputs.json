@@ -1,0 +1,7 @@
+{
+  "testcases": [
+    {"testcase":"Testcase1","username": "Admin", "password": "admin123", "is_valid": true, "expected_text": "Dashboard"},
+    {"testcase":"Testcase2","username": "Admin", "password": "wrongpass", "is_valid": false, "expected_text": "Invalid credentials"},
+    {"testcase":"Testcase3","username": "FakeUser", "password": "admin123", "is_valid": false, "expected_text": "Invalid credentials"}
+  ]
+}
