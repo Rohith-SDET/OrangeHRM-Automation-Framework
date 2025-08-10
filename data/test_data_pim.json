@@ -1,0 +1,14 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "employee_id": "45678",
+    "search_name": "John Doe"
+  },
+  {
+    "first_name": "Alice",
+    "last_name": "Smith",
+    "employee_id": "455678",
+    "search_name": "Alice Smith"
+  }
+]

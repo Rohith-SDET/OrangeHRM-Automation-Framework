@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+<<<<<<< HEAD
 
 class AdminPage:
     def __init__(self, driver):
@@ -64,3 +65,76 @@ class AdminPage:
     #         if option.text.strip() == value:
     #             option.click()
     #             break
+=======
+class AdminPage:
+    def __init__(self, driver):
+        self.driver = driver
+        self.wait = WebDriverWait(driver, 12)
+
+        # Main Admin tab
+        self.admin_menu = (By.XPATH, "//span[text()='Admin']/ancestor::a")
+
+        # Username field (top text input)
+        self.username_field = (By.XPATH, "//div[label[text()='Username']]/following-sibling::div/input")
+
+        # User Role dropdown and options
+        self.userrole_dropdown = (By.XPATH, "//label[text()='User Role']/../following-sibling::div//div[contains(@class,'oxd-select-text--after')]")
+        self.userrole_option = lambda value: (
+            By.XPATH, f"//div[@role='option']/span[normalize-space()='{value}']"
+        )
+
+        # Employee Name: auto-suggest input and matching suggestion
+        self.employee_input = (By.XPATH, "//input[@placeholder='Type for hints...']")
+        self.employee_suggestion = lambda name: (
+            By.XPATH, f"//div[@role='option']/span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{name.lower()}')]"
+        )
+
+        # Status dropdown and options
+        self.status_dropdown = (By.XPATH, "//label[text()='Status']/../following-sibling::div//div[contains(@class,'oxd-select-text--after')]")
+        self.status_option = lambda value: (
+            By.XPATH, f"//div[@role='option']/span[normalize-space()='{value}']"
+        )
+
+        # Search button
+        self.search_btn = (By.XPATH, "//button[normalize-space()='Search']")
+
+        # Table result rows (each user row)
+        self.result_rows = (By.XPATH, "//div[@class='oxd-table-body']//div[@class='oxd-table-card']")
+
+    def go_to_admin(self):
+        self.wait.until(EC.element_to_be_clickable(self.admin_menu)).click()
+        self.wait.until(EC.visibility_of_element_located(self.username_field))
+
+    def search_user(self, username, userrole, employee, status):
+        # Username
+        username_box = self.wait.until(EC.visibility_of_element_located(self.username_field))
+        username_box.clear()
+        username_box.send_keys(username)
+
+        # User Role dropdown
+        self.driver.find_element(*self.userrole_dropdown).click()
+        self.wait.until(EC.element_to_be_clickable(self.userrole_option(userrole))).click()
+
+        # Employee Name (auto-suggest)
+        emp_box = self.driver.find_element(*self.employee_input)
+        emp_box.clear()
+        emp_box.send_keys(employee)
+        self.wait.until(
+            EC.element_to_be_clickable(self.employee_suggestion(employee))
+        ).click()
+
+        # Status dropdown
+        self.driver.find_element(*self.status_dropdown).click()
+        self.wait.until(EC.element_to_be_clickable(self.status_option(status))).click()
+
+        # Click Search
+        self.driver.find_element(*self.search_btn).click()
+
+    def print_results(self):
+        self.wait.until(EC.visibility_of_any_elements_located(self.result_rows))
+        rows = self.driver.find_elements(*self.result_rows)
+        print(f"\n✅ Found {len(rows)} record(s):")
+        for i, row in enumerate(rows, 1):
+            first_line = row.text.splitlines()[0] if row.text else ""
+            print(f"{i}. {first_line}")
+>>>>>>> e0eb84e (Initial commit)
