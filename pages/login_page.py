@@ -1,14 +1,12 @@
 from selenium.webdriver.common.by import By
-<<<<<<< HEAD
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-=======
->>>>>>> e0eb84e (Initial commit)
 
 class LoginPage:
     def __init__(self, driver):
         self.driver = driver
-<<<<<<< HEAD
+
         self.wait = WebDriverWait(driver, 10)
 
         # Locators
@@ -43,7 +41,7 @@ class LoginPage:
     # Get error message after failed login
     def get_error_message(self):
         return self.wait.until(EC.visibility_of_element_located(self.invalid_cred)).text
-=======
+
         self.username_input = (By.NAME, "username")
         self.password_input = (By.NAME, "password")
         self.login_button = (By.XPATH, "//button[@type='submit']")
@@ -56,4 +54,4 @@ class LoginPage:
 
     def get_error_message(self):
         return self.driver.find_element(*self.error_msg).text
->>>>>>> e0eb84e (Initial commit)
+

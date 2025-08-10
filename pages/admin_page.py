@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-<<<<<<< HEAD
 
 class AdminPage:
     def __init__(self, driver):
@@ -65,7 +64,6 @@ class AdminPage:
     #         if option.text.strip() == value:
     #             option.click()
     #             break
-=======
 class AdminPage:
     def __init__(self, driver):
         self.driver = driver
@@ -137,4 +135,3 @@ class AdminPage:
         for i, row in enumerate(rows, 1):
             first_line = row.text.splitlines()[0] if row.text else ""
             print(f"{i}. {first_line}")
->>>>>>> e0eb84e (Initial commit)

@@ -1,5 +1,4 @@
 import pytest
-<<<<<<< HEAD
 from pages.admin_page import AdminPage
 
 
@@ -20,7 +19,7 @@ def test_print_usernames(login, user_data):
 
         # Optional assert
         assert len(usernames) > 0, "No users found on Admin page"
-=======
+
 import json
 from pages.login_page import LoginPage
 from pages.admin_page import AdminPage
@@ -47,4 +46,4 @@ def test_admin_search_user(driver, data):
 
     print(f"\n🔍Search for: {data['username']} ({data['employee']})")
     admin.print_results()
->>>>>>> e0eb84e (Initial commit)
+

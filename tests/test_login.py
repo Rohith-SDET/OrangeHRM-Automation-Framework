@@ -1,5 +1,4 @@
 import pytest
-<<<<<<< HEAD
 from pages.login_page import LoginPage
 
 @pytest.mark.parametrize("test_case", range(3))  # We have 3 testcases in JSON
@@ -21,7 +20,7 @@ def test_login_cases(setup, load_test_data, test_case):
     else:
         assert data["expected_text"] in login.get_error_message()
         print("✅ Invalid login handled.")
-=======
+
 import json
 from pages.login_page import LoginPage
 
@@ -37,4 +36,4 @@ def test_login(driver, data):
         assert data["expected_error"] in page.get_error_message()
     else:
         assert "dashboard" in driver.current_url
->>>>>>> e0eb84e (Initial commit)
+
