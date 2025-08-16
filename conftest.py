@@ -27,7 +27,7 @@ def pytest_sessionstart():
 def driver():
     driver = get_driver()
     driver.get(get_base_url())
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(20)
     driver.maximize_window()
     yield driver
     driver.quit()

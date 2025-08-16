@@ -1,0 +1,28 @@
+{
+  "information": [
+    {
+      "first_name": "Arjun",
+      "middle_name": "K",
+      "last_name": "Menon",
+      "emp_id": "1001",
+      "other_id": "A123",
+      "driver_licence": "DL1234567",
+      "licence_exp_date": "2026-02-10",
+      "nationality": "Indian",
+      "marital_status": "Single",
+      "date_of_birth": "1997-08-21"
+    },
+    {
+      "first_name": "Anbarasi",
+      "middle_name": "M",
+      "last_name": "Ajithkumar",
+      "emp_id": "1002",
+      "other_id": "B456",
+      "driver_licence": "DL8976543",
+      "licence_exp_date": "2027-05-10",
+      "nationality": "Indian",
+      "marital_status": "Married",
+      "date_of_birth": "2000-07-15"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "kpis": [
+    {
+      "kpi_name": "Quality of Work",
+      "job_title": "QA Engineer",
+      "min_rating": 50,
+      "max_rating": 100,
+      "make_default": true
+    },
+    {
+      "kpi_name": "Speed of Delivery",
+      "job_title": "QA Engineer",
+      "min_rating": 60,
+      "max_rating": 100,
+      "make_default": false
+    }
+  ]
+}

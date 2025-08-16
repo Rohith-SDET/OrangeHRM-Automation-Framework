@@ -1,0 +1,39 @@
+{
+  "vacancies": [
+    {
+      "job_title": "Automaton Tester",
+      "vacancy_name": "Automation Vacancy 3",
+      "hiring_manager": "Mansi Sham Sinha",
+      "number_of_positions": 2,
+      "description": "Hiring automation testers - batch 1"
+    },
+        {
+      "job_title": "Senior Developer",
+      "vacancy_name": "Senior Dev Vacancy",
+      "hiring_manager": "Ravi M B",
+      "number_of_positions": 1,
+      "description": "Looking for experienced senior developers"
+    },
+    {
+      "job_title": "HR Manager",
+      "vacancy_name": "HR Manager Role",
+      "hiring_manager": "Charles  Carter",
+      "number_of_positions": 3,
+      "description": "Hiring for HR Manager positions"
+    },
+    {
+      "job_title": "QA Engineer",
+      "vacancy_name": "QA Engineering Role",
+      "hiring_manager": "krishna vasudev yadav",
+      "number_of_positions": 4,
+      "description": "Expanding QA team with engineers"
+    },
+    {
+      "job_title": "DevOps Specialist",
+      "vacancy_name": "DevOps Vacancy",
+      "hiring_manager": "Peter Mac Anderson",
+      "number_of_positions": 2,
+      "description": "Looking for skilled DevOps specialists"
+    }
+  ]
+}
