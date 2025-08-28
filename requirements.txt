@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 selenium==4.33.0
 pytest==8.4.0
 pytest-html==4.1.1
-=======
 selenium
 pytest
 pytest-html
 allure-pytest
 python-dotenv
->>>>>>> e0eb84e (Initial commit)
+
