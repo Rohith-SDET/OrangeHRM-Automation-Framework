@@ -44,7 +44,7 @@ def pytest_runtest_makereport(item, call):
         os.makedirs("screenshots", exist_ok=True)
         path = os.path.join("screenshots", f"{name}_{ts}.png")
         driver_obj.save_screenshot(path)
-        print(f"\n📸 Screenshot saved: {path}")
+        print(f"\n Screenshot saved: {path}")
         try:
             import allure
             with open(path, "rb") as f:
