@@ -1,130 +1,95 @@
-OrangeHRM UI Automation Suite
-Production-style UI automation for the OrangeHRM demo app using Python, Selenium, Pytest, and Page Object Model (POM). The suite is data-driven, report-rich, and CI/CD ready for fast, repeatable runs.
+OrangeHRM Automation Framework
+A production-quality UI test automation framework for the OrangeHRM web application, built using Python, Selenium, and Pytest. This project is a comprehensive solution designed for scalability, maintainability, and seamless integration into a CI/CD pipeline.
 
 Highlights
-Page Object Model for clean locators and reusable actions across modules.
+Architected for Scale: Employs the Page Object Model (POM) to separate page locators and actions from test logic, making the suite highly maintainable and resilient to UI changes.
 
-JSON-driven test data with Pytest parametrization.
+Data-Driven: All test data is externalized in JSON files and consumed via Pytest parametrization, allowing for easy test expansion and data management without code changes.
 
-Failure screenshots auto-captured and attached to reports.
+Enhanced Reporting: Features professional, interactive reporting with Allure Reports, including automatic screenshots on test failure to accelerate debugging.
 
-Single-command execution and CI-friendly structure.
+CI/CD Ready: Structured for effortless execution in a CI environment like GitHub Actions.
 
 Tech Stack
-Python 3.10+
-
-Selenium WebDriver
-
-Pytest (fixtures, hooks, parametrization)
-
-Reporting: pytest-html, Allure (optional)
-
+Language: Python 3.10+
+Framework: Pytest
+Web Automation: Selenium WebDriver
+API Testing: Requests
+Reporting: Allure Reports
 Data: JSON
+Dependency Management: requirements.txt
 
-Repository Structure
-pages/ — Page Objects: login, pim, leave, recruitment, performance, my_info, time_attendance, admin.
+📂 Repository Structure
+.
+├── pages/
+│   ├── base_page.py
+│   ├── login_page.py
+│   └── (other page objects)
+├── tests/
+│   ├── test_login.py
+│   └── (other test files)
+├── data/
+│   ├── test_data_login.json
+│   └── (other data files)
+├── utils/
+│   ├── config.py
+│   └── driver_factory.py
+├── screenshots/
+├── reports/
+├── .gitignore
+├── conftest.py
+├── pytest.ini
+└── requirements.txt
 
-tests/ — Test modules mapping to features (e.g., test_login.py, test_pim.py).
+⚙️ Getting Started
+1. Clone the Repository
 
-data/ — Test datasets (login, pim, recruitment, performance, my_info, admin).
+git clone https://github.com/Rohith-SDET/OrangeHRM-Automation-Framework.git
+cd OrangeHRM-Automation-Framework
 
-utils/ — driver_factory.py, config.py, shared data (test_data_inputs.json).
+2. Setup Virtual Environment
+Create and activate a virtual environment to manage project dependencies.
 
-screenshots/ — Failure images saved by pytest hook.
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-reports/ and allure-results/ — HTML and Allure outputs.
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
 
-Test Matrix (plain text)
-Login: valid and invalid login with message validation (data/test_data_login.json).
-
-PIM: add employee and search by name/ID (data/test_data_pim.json).
-
-Leave: open Apply page and validate “No Leave Types with Leave Balance” (N/A).
-
-Recruitment: add vacancy (job title, hiring manager, positions) (data/recruitement_test_data.json).
-
-Performance: add KPI, rating bounds, default toggle (data/performance_test_data.json).
-
-My Info: update profile fields (IDs, DOB, gender) and verify success toast (data/my_info_test_data.json).
-
-Time & Attendance: navigate to Timesheet and verify page content (N/A).
-
-Admin: filter users by username/role/status/employee and list results (data/tes_data_admin.json).
-
-Setup
-Create and activate virtual environment
-
-Windows:
-
-text
-python -m venv .venv
-.venv\Scripts\activate
-macOS/Linux:
-
-text
-python -m venv .venv
-source .venv/bin/activate
-Install dependencies
-
-text
+3. Install Dependencies
+Install all necessary libraries using the requirements.txt file.
 pip install -r requirements.txt
-Or install core packages:
 
-text
-pip install selenium pytest pytest-html allure-pytest python-dotenv
-Optional: set BASE_URL
+5. Run Tests
+You can run the entire test suite or a specific test file.
 
-Default is in utils/config.py. To override:
+Run all tests:
 
-Windows:
-
-text
-set BASE_URL=https://your-env-url
-macOS/Linux:
-
-text
-export BASE_URL=https://your-env-url
-Running Tests
-Run all tests (HTML + Allure paths can be set in pytest.ini):
-
-text
 pytest -v
 Run a specific module:
+pytest tests/test_login.py
 
-text
-pytest tests/test_pim.py
-Generate standalone HTML report:
+5. Generate Allure Report
+Generate and view a professional, interactive Allure Report after your test run.
 
-text
-pytest --html=reports/report.html --self-contained-html
-Generate and view Allure:
-
-text
 pytest --alluredir=allure-results
 allure serve allure-results
-Reporting & Artifacts
-HTML report: reports/report.html (failure screenshots embedded when plugin is present).
 
-Allure: allure-results/ with steps and screenshots for failed steps (use allure serve to view).
+Test Coverage
+Module	- Scenarios
+Login	- Valid and invalid login attempts with corresponding error message validation.
+PIM	- Add a new employee and verify the creation via a search function.
+Recruitment	- Create a new vacancy and validate the job title and hiring manager.
+My Info	- Update employee details and confirm the changes are saved correctly.
+Admin	- Filter user accounts by username, role, and status.
 
-Raw screenshots: screenshots/ captured via pytest hook on failures.
+Engineering Principles
+Encapsulation: The POM architecture encapsulates all page-specific logic, isolating test scripts from changes in the UI.
 
-What’s Engineered
-POM encapsulation to isolate selectors/actions and reduce flakiness.
+Hooks and Fixtures: Pytest fixtures are used to manage test lifecycle, including driver setup and teardown, while hooks automatically capture screenshots on failure, providing crucial debugging artifacts.
 
-JSON-driven parametrization for scalable coverage.
+Test Data Separation: By storing data in JSON files, the test suite becomes more flexible and easier to maintain.
 
-Pytest hooks in conftest.py to auto-attach failure screenshots.
-
-Configurable environments via utils/config.py and environment variables.
-
-CI/CD Ready
-Typical pipeline steps:
-
-Set up Python
-
-pip install -r requirements.txt
-
-pytest -v --alluredir=allure-results
-
-Upload reports/, allure-results/, and screenshots/ as build artifacts
+Configuration Management: The utils/config.py file allows for easy management of the base URL and other settings, enabling testing across different environments.
