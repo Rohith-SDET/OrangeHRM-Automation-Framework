@@ -28,11 +28,11 @@ cd OrangeHRM-Automation-Framework
 2. Setup Virtual Environment:
 Create and activate a virtual environment to manage project dependencies.
 
-Windows
+Windows: 
 python -m venv venv
 venv\Scripts\activate
 
-macOS/Linux
+macOS/Linux: 
 python3 -m venv venv
 source venv/bin/activate
 
