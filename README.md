@@ -10,7 +10,7 @@ Enhanced Reporting: Features professional, interactive reporting with Allure Rep
 
 CI/CD Ready: Structured for effortless execution in a CI environment like GitHub Actions.
 
-Tech Stack
+Tech Stack:
 Language: Python 3.10+
 Framework: Pytest
 Web Automation: Selenium WebDriver
@@ -18,8 +18,6 @@ API Testing: Requests
 Reporting: Allure Reports
 Data: JSON
 Dependency Management: requirements.txt
-
-Repository Structure
 .
 ├── pages/
 │   ├── base_page.py
