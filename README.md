@@ -1,9 +1,8 @@
 # OrangeHRM Automation Framework
 
-About OrangeHRM
+## About OrangeHRM
 OrangeHRM is a popular open-source Human Resource Management (HRM) web application used to manage employee information, leave, recruitment, performance, and time & attendance.  
 This project automates its UI using Python, Selenium, and Pytest to demonstrate enterprise-grade automation practices.
-
 
 A **production-quality UI test automation framework** for the OrangeHRM web application, built using **Python, Selenium, and Pytest**.  
 This project is designed for **scalability, maintainability, and seamless CI/CD integration**, making it portfolio-ready for SDET and QA automation roles.
