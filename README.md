@@ -1,7 +1,7 @@
 OrangeHRM Automation Framework
 A production-quality UI test automation framework for the OrangeHRM web application, built using Python, Selenium, and Pytest. This project is a comprehensive solution designed for scalability, maintainability, and seamless integration into a CI/CD pipeline.
 
-Highlights
+Highlights:
 Architected for Scale: Employs the Page Object Model (POM) to separate page locators and actions from test logic, making the suite highly maintainable and resilient to UI changes.
 
 Data-Driven: All test data is externalized in JSON files and consumed via Pytest parametrization, allowing for easy test expansion and data management without code changes.
@@ -18,26 +18,6 @@ API Testing: Requests
 Reporting: Allure Reports
 Data: JSON
 Dependency Management: requirements.txt
-.
-├── pages/
-│   ├── base_page.py
-│   ├── login_page.py
-│   └── (other page objects)
-├── tests/
-│   ├── test_login.py
-│   └── (other test files)
-├── data/
-│   ├── test_data_login.json
-│   └── (other data files)
-├── utils/
-│   ├── config.py
-│   └── driver_factory.py
-├── screenshots/
-├── reports/
-├── .gitignore
-├── conftest.py
-├── pytest.ini
-└── requirements.txt
 
 ⚙️ Getting Started
 1. Clone the Repository:
