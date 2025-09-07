@@ -1,72 +1,107 @@
-OrangeHRM Automation Framework
-A production-quality UI test automation framework for the OrangeHRM web application, built using Python, Selenium, and Pytest. This project is a comprehensive solution designed for scalability, maintainability, and seamless integration into a CI/CD pipeline.
+# OrangeHRM Automation Framework
 
-Highlights:
-Architected for Scale: Employs the Page Object Model (POM) to separate page locators and actions from test logic, making the suite highly maintainable and resilient to UI changes.
+A **production-quality UI test automation framework** for the OrangeHRM web application, built using **Python, Selenium, and Pytest**.  
+This project is designed for **scalability, maintainability, and seamless CI/CD integration**, making it portfolio-ready for SDET and QA automation roles.
 
-Data-Driven: All test data is externalized in JSON files and consumed via Pytest parametrization, allowing for easy test expansion and data management without code changes.
+---
 
-Enhanced Reporting: Features professional, interactive reporting with Allure Reports, including automatic screenshots on test failure to accelerate debugging.
+## 🚀 Highlights
 
-CI/CD Ready: Structured for effortless execution in a CI environment like GitHub Actions.
+- **Architected for Scale**:  
+  Uses the **Page Object Model (POM)** to separate locators and actions from test logic, ensuring resilience to UI changes.  
 
-Tech Stack:
-Language: Python 3.10+
-Framework: Pytest
-Web Automation: Selenium WebDriver
-API Testing: Requests
-Reporting: Allure Reports
-Data: JSON
-Dependency Management: requirements.txt
+- **Data-Driven Testing**:  
+  Test data is externalized in **JSON files** and consumed via **Pytest parametrization** for flexible, scalable scenarios.  
 
-⚙️ Getting Started
-1. Clone the Repository:
+- **Enhanced Reporting**:  
+  Integrated with **Allure Reports** and **failure screenshot capture** to accelerate debugging and provide professional reporting.  
 
+- **CI/CD Ready**:  
+  Structured for smooth execution in pipelines (e.g., **GitHub Actions**, **Jenkins**) with reports and artifacts auto-generated.  
+
+---
+
+## 🛠 Tech Stack
+
+| Category             | Tools / Frameworks              |
+|----------------------|----------------------------------|
+| Language             | Python 3.10+                    |
+| Test Framework       | Pytest                          |
+| Web Automation       | Selenium WebDriver              |
+| API Testing (optional)| Requests                       |
+| Reporting            | Allure Reports, pytest-html     |
+| Data                 | JSON                            |
+| Dependency Mgmt      | requirements.txt                |
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+bash
 git clone https://github.com/Rohith-SDET/OrangeHRM-Automation-Framework.git
 cd OrangeHRM-Automation-Framework
 
-2. Setup Virtual Environment:
-Create and activate a virtual environment to manage project dependencies.
+2. Setup Virtual Environment
 
-Windows: 
+Windows:
+
 python -m venv venv
 venv\Scripts\activate
 
-macOS/Linux: 
+
+macOS/Linux:
+
 python3 -m venv venv
 source venv/bin/activate
 
 3. Install Dependencies:
-Install all necessary libraries using the requirements.txt file.
 pip install -r requirements.txt
 
-5. Run Tests:
-You can run the entire test suite or a specific test file.
+4. Run Tests
+
 Run all tests:
 pytest -v
+
 
 Run a specific module:
 pytest tests/test_login.py
 
-5. Generate Allure Report:
-Generate and view a professional, interactive Allure Report after your test run.
-
+5. Generate Allure Report
 pytest --alluredir=allure-results
 allure serve allure-results
 
 Test Coverage:
-Module	- Scenarios
-Login	- Valid and invalid login attempts with corresponding error message validation.
-PIM	- Add a new employee and verify the creation via a search function.
-Recruitment	- Create a new vacancy and validate the job title and hiring manager.
-My Info	- Update employee details and confirm the changes are saved correctly.
-Admin	- Filter user accounts by username, role, and status.
+
+| Module          | Scenarios                                                    |
+| --------------- | ------------------------------------------------------------ |
+| **Login**       | Valid & invalid login attempts with error message validation |
+| **PIM**         | Add a new employee and verify via search                     |
+| **Recruitment** | Create vacancy, validate job title & hiring manager          |
+| **My Info**     | Update employee details & confirm persistence                |
+| **Admin**       | Filter user accounts by username, role, and status           |
 
 Engineering Principles:
-Encapsulation: The POM architecture encapsulates all page-specific logic, isolating test scripts from changes in the UI.
 
-Hooks and Fixtures: Pytest fixtures are used to manage test lifecycle, including driver setup and teardown, while hooks automatically capture screenshots on failure, providing crucial debugging artifacts.
+Encapsulation → POM isolates page logic, reducing flakiness & maintenance overhead.
 
-Test Data Separation: By storing data in JSON files, the test suite becomes more flexible and easier to maintain.
+Fixtures & Hooks → Pytest fixtures manage driver setup/teardown, hooks auto-capture screenshots.
 
-Configuration Management: The utils/config.py file allows for easy management of the base URL and other settings, enabling testing across different environments.
+Test Data Separation → JSON files externalize test data for flexibility and maintainability.
+
+Config Management → utils/config.py enables environment-based execution (staging, prod, etc.).
+
+
+CI/CD Ready:
+
+Easily integrated with GitHub Actions or Jenkins. Typical pipeline steps:
+
+Setup Python
+
+Install dependencies
+
+Run tests with pytest
+
+Collect Allure/HTML reports + screenshots as build artifacts
+
+
