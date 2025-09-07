@@ -42,12 +42,12 @@ Repository Structure
 └── requirements.txt
 
 ⚙️ Getting Started
-1. Clone the Repository
+1. Clone the Repository:
 
 git clone https://github.com/Rohith-SDET/OrangeHRM-Automation-Framework.git
 cd OrangeHRM-Automation-Framework
 
-2. Setup Virtual Environment
+2. Setup Virtual Environment:
 Create and activate a virtual environment to manage project dependencies.
 
 Windows
@@ -58,26 +58,25 @@ macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
 
-3. Install Dependencies
+3. Install Dependencies:
 Install all necessary libraries using the requirements.txt file.
 pip install -r requirements.txt
 
-5. Run Tests
+5. Run Tests:
 You can run the entire test suite or a specific test file.
-
 Run all tests:
-
 pytest -v
+
 Run a specific module:
 pytest tests/test_login.py
 
-5. Generate Allure Report
+5. Generate Allure Report:
 Generate and view a professional, interactive Allure Report after your test run.
 
 pytest --alluredir=allure-results
 allure serve allure-results
 
-Test Coverage
+Test Coverage:
 Module	- Scenarios
 Login	- Valid and invalid login attempts with corresponding error message validation.
 PIM	- Add a new employee and verify the creation via a search function.
@@ -85,7 +84,7 @@ Recruitment	- Create a new vacancy and validate the job title and hiring manager
 My Info	- Update employee details and confirm the changes are saved correctly.
 Admin	- Filter user accounts by username, role, and status.
 
-Engineering Principles
+Engineering Principles:
 Encapsulation: The POM architecture encapsulates all page-specific logic, isolating test scripts from changes in the UI.
 
 Hooks and Fixtures: Pytest fixtures are used to manage test lifecycle, including driver setup and teardown, while hooks automatically capture screenshots on failure, providing crucial debugging artifacts.
