@@ -29,11 +29,10 @@ This project is designed for **scalability, maintainability, and seamless CI/CD 
 |----------------------|----------------------------------|
 | Language             | Python 3.10+                    |
 | Test Framework       | Pytest                          |
-| Web Automation       | Selenium WebDriver              |
-| API Testing (optional)| Requests                       |
+| Web Automation       | Selenium WebDriver|
 | Reporting            | Allure Reports, pytest-html     |
 | Data                 | JSON                            |
-| Dependency Mgmt      | requirements.txt                |
+| Dependency     | requirements.txt                |
 
 ---
 
